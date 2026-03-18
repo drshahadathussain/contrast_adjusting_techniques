@@ -1,0 +1,53 @@
+img = imread("boston night.jpg");% Importing the image "boston night.jpg"
+
+% Converting the image into HSV colorspace
+img_hsv = rgb2hsv(img);
+V = img_hsv(:,:,3); % original value V
+
+gamma = 1/2;
+V_gamma = V .^ gamma; % 1. V gamma adjusted
+
+V_adjust = imadjust(V); % 2. V imadjust adjusted
+
+V_histeq = histeq(V); % 3. V histeq adjusted
+
+V_adapthisteq = adapthisteq(V); % V adapthisteq adjusted
+
+% New HSV images with adjusted Value channels
+
+hsv_gamma = img_hsv;
+hsv_gamma(:,:,3) = V_gamma;
+
+hsv_imadjust = img_hsv;
+hsv_imadjust(:,:,3) = V_adjust;
+
+hsv_histeq = img_hsv;
+hsv_histeq(:,:,3)= V_histeq;
+
+hsv_adapthisteq = img_hsv;
+hsv_adapthisteq(:,:,3)= V_adapthisteq;
+
+
+% Conversion back to RGB colorspace
+
+rgb_gamma = hsv2rgb(hsv_gamma);
+rgb_imadjust = hsv2rgb(hsv_imadjust);
+rgb_histeq = hsv2rgb(hsv_histeq);
+rgb_adapthisteq = hsv2rgb(hsv_adapthisteq);
+
+% Conversion from double to uint8 datatype
+
+rgb_gamma_uint8 = im2uint8(rgb_gamma);
+rgb_imadjust_uint8 = im2uint8(rgb_imadjust);
+rgb_histeq_uint8 = im2uint8(rgb_histeq);
+rgb_adapthisteq_uint8 = im2uint8(rgb_adapthisteq);
+
+% Displaying the results
+
+ imgGamma = rgb_gamma_uint8;
+ imgAdjust = rgb_imadjust_uint8;
+ imgEq = rgb_histeq_uint8;
+ imgAdapt = rgb_adapthisteq_uint8;
+
+% Uncomment the below code to view four images
+ montage({imgGamma, imgAdjust, imgEq, imgAdapt})
