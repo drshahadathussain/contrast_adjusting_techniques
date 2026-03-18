@@ -1,0 +1,26 @@
+
+# Adjusting the Contrast of a Color Image
+
+
+In this project you will compare four different contrast adjustments techniques on the "boston night.jpg" image. 
+
+Import the "boston night.jpg" image and convert the image to the HSV color space. Create four new images by adjusting the Value channel of the HSV image.
+
+1. Perform gamma correction using γ=1/2 as you did in Module 2.
+2. Use the imadjust function with no additional inputs to adjust the image.
+3. Use the histeq function with no additional inputs to adjust the image.
+4. Use the adapthisteq function with no additional inputs to adjust the image.
+ 
+**Note:** you do not need to rotate the image as you did in Module 2.
+
+After performing contrast adjustment on the **Value** channel, do the following steps:
+
+- convert the image back to the RGB colorspace
+- convert the image from double to the uint8 datatype. 
+
+Your four final images must have the following variable names to be checked by the grader:
+
+- imgGamma
+- imgAdjust
+- imgEq
+- imgAdapt
