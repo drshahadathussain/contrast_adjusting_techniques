@@ -51,6 +51,9 @@ The final output is displayed as a montage to compare the efficacy of each metho
 
 4. Run the main script to generate the contrast-adjusted montages.
 
+# References
+- [Introduction to Image Processing](https://www.coursera.org/learn/introduction-image-processing/)
+
 ## About the Author
 
 **Dr. Shahadat Hussain**
