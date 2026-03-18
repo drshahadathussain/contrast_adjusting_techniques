@@ -38,15 +38,15 @@ The core workflow follows these steps:
 
 The final output is displayed as a montage to compare the efficacy of each method:
 
-Matlab
-montage({imgGamma, imgAdjust, imgEq, imgAdapt})
+`Matlab`
+`montage({imgGamma, imgAdjust, imgEq, imgAdapt})`
 
 # 🚀 How to Run
 1. Ensure you have **MATLAB** installed.
 
 2. Clone this repository.
 
-3. Place boston night.jpg in the root folder.
+3. Place `boston night.jpg` in the root folder.
 
 4. Run the main script to generate the contrast-adjusted montages.
 
